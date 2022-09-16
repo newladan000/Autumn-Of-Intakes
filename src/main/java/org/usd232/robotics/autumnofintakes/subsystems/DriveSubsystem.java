@@ -1,6 +1,6 @@
-package org.usd232.robotics.autumofintakes.subsystems;
+package org.usd232.robotics.autumnofintakes.subsystems;
 
-import org.usd232.robotics.autumofintakes.log.Logger;
+import org.usd232.robotics.autumnofintakes.log.Logger;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 

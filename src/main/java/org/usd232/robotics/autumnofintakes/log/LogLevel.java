@@ -1,4 +1,4 @@
-package org.usd232.robotics.autumofintakes.log;
+package org.usd232.robotics.autumnofintakes.log;
 
 /**
  * An enum of the different log levels

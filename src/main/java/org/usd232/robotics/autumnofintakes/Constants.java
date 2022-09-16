@@ -1,4 +1,4 @@
-package org.usd232.robotics.autumofintakes;
+package org.usd232.robotics.autumnofintakes;
 
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
@@ -9,7 +9,7 @@ package org.usd232.robotics.autumofintakes;
  * constants are needed, to reduce verbosity.
  * </p>
  * For example:
- * <pre> {@code import static org.usd232.robotics.autumofintakes.Constants.*;} </pre>
+ * <pre> {@code import static org.usd232.robotics.autumnofintakes.Constants.*;} </pre>
  */
 public final class Constants {
     public static final class OIConstants {

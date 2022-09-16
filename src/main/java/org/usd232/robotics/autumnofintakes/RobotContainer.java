@@ -1,11 +1,11 @@
-package org.usd232.robotics.autumofintakes;
+package org.usd232.robotics.autumnofintakes;
 
 import edu.wpi.first.wpilibj.Joystick;
-import org.usd232.robotics.autumofintakes.commands.ExampleCommand;
-import org.usd232.robotics.autumofintakes.log.Logger;
-import org.usd232.robotics.autumofintakes.subsystems.DriveSubsystem;
+import org.usd232.robotics.autumnofintakes.commands.ExampleCommand;
+import org.usd232.robotics.autumnofintakes.log.Logger;
+import org.usd232.robotics.autumnofintakes.subsystems.DriveSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
-import static org.usd232.robotics.autumofintakes.Constants.*;
+import static org.usd232.robotics.autumnofintakes.Constants.*;
 
 public class RobotContainer {
     /**

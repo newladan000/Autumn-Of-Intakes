@@ -1,6 +1,6 @@
-package org.usd232.robotics.autumofintakes.commands;
+package org.usd232.robotics.autumnofintakes.commands;
 
-import org.usd232.robotics.autumofintakes.subsystems.DriveSubsystem;
+import org.usd232.robotics.autumnofintakes.subsystems.DriveSubsystem;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 /** An example command that uses an example subsystem. */

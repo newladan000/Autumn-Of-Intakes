@@ -1,4 +1,4 @@
-package org.usd232.robotics.autumofintakes.log;
+package org.usd232.robotics.autumnofintakes.log;
 
 import java.io.FileOutputStream;
 import java.io.PrintStream;

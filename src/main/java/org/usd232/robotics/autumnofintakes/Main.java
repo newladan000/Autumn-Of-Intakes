@@ -1,4 +1,4 @@
-package org.usd232.robotics.autumofintakes;
+package org.usd232.robotics.autumnofintakes;
 
 import edu.wpi.first.wpilibj.RobotBase;
 
