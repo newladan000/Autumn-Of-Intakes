@@ -12,6 +12,7 @@ package org.usd232.robotics.autumnofintakes;
  * <pre> {@code import static org.usd232.robotics.autumnofintakes.Constants.*;} </pre>
  */
 public final class Constants {
+    // https://drive.google.com/file/d/1g1jBZHPf6Fq6V2tG7PFIGtjpEEV2BIGf/view?usp=sharing
     public static final class OIConstants {
         public static final int LEFT_JOYSTICK = 0;
         public static final int RIGHT_JOYSTICK = 1;
