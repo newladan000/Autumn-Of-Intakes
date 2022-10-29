@@ -1,7 +1,7 @@
 package org.usd232.robotics.autumnofintakes;
 
 import edu.wpi.first.wpilibj.Joystick;
-import org.usd232.robotics.autumnofintakes.commands.ExampleCommand;
+import org.usd232.robotics.autumnofintakes.commands.TankDrive;
 import org.usd232.robotics.autumnofintakes.log.Logger;
 import org.usd232.robotics.autumnofintakes.subsystems.DriveSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -18,18 +18,19 @@ public class RobotContainer {
     //@SuppressWarnings("unused")
     private static final Logger LOG = new Logger();
     
-    private final DriveSubsystem m_driveSubsystem = new DriveSubsystem();
+    private final DriveSubsystem driveSubsystem = new DriveSubsystem();
 
-    private final ExampleCommand m_autoCommand = new ExampleCommand(m_driveSubsystem);
-
-    @SuppressWarnings("unused")
-    private final Joystick movementJoystick = LOG.catchAll(() -> new Joystick(OIConstants.LEFT_JOYSTICK));
-    @SuppressWarnings("unused")
-    private final Joystick rotationJoystick = LOG.catchAll(() -> new Joystick(OIConstants.RIGHT_JOYSTICK));
+    public final Joystick leftJoystick = LOG.catchAll(() -> new Joystick(OIConstants.LEFT_JOYSTICK));
+    public final Joystick rightJoystick = LOG.catchAll(() -> new Joystick(OIConstants.RIGHT_JOYSTICK));
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
     public RobotContainer() {
-        // Configure the button bindings
+        driveSubsystem.setDefaultCommand(new TankDrive(
+            leftJoystick.getY(), 
+            rightJoystick.getY(),
+            driveSubsystem));
+
+        // Configure the button bindings                                               
         configureButtonBindings();
     }
 
@@ -42,6 +43,6 @@ public class RobotContainer {
      */
     public Command getAutonomousCommand() {
         // An ExampleCommand will run in autonomous
-        return m_autoCommand;
+        return null;
     }
 }
