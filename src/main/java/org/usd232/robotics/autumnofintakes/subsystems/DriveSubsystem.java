@@ -3,7 +3,6 @@ package org.usd232.robotics.autumnofintakes.subsystems;
 import org.usd232.robotics.autumnofintakes.log.Logger;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj.motorcontrol.MotorController;
 import edu.wpi.first.wpilibj.motorcontrol.Talon;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -14,14 +13,14 @@ import static org.usd232.robotics.autumnofintakes.Constants.*;
 public class DriveSubsystem extends SubsystemBase {
     /**
      * The logger.
-     * 
+     *
      * @since 2018
      */
     // @SuppressWarnings("unused")
     private static final Logger LOG = new Logger();
 
-    private final MotorController leftMotor;
-    private final MotorController rightMotor;
+    private final Talon leftMotor;
+    private final Talon rightMotor;
     private final DifferentialDrive differentialDrive;
 
     public DriveSubsystem() {

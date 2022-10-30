@@ -22,6 +22,7 @@ public class RobotContainer {
 
     /** The container for the robot. Contains subsystems, OI devices, and commands. */
     public RobotContainer() {
+
         driveSubsystem.setDefaultCommand(new TankDrive(
             scaleInput(IO.leftJoystick.getY()),
             scaleInput(IO.rightJoystick.getY()),
@@ -43,12 +44,15 @@ public class RobotContainer {
         return null;
     }
 
-    /** Whipple code. . . */
+    /**
+     * Whipple code. . .
+     * make of that what you wil
+     */
     private double scaleInput(double input) {
         double output = 0;
         double absoluteInput = Math.abs(input);
-        if (absoluteInput > OIConstants.DEADBAND) {
 
+        if (absoluteInput > OIConstants.DEADBAND) {
             output = absoluteInput / input
                 * (((1 - DriveConstants.MIN_MOTOR_INPUT) / (1 - OIConstants.DEADBAND))
                 * (absoluteInput - OIConstants.DEADBAND) + DriveConstants.MIN_MOTOR_INPUT);

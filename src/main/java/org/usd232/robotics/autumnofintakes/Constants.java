@@ -30,7 +30,8 @@ public final class Constants {
         public static final boolean RIGHT_MOTOR_INVERTED = false;
 
         /** Minimum power the motors need to move */
-        // TODO: lim MIN_MOTOR_INPUT -> 0
+        // TODO: test input range
+        // value from bones not blockHead
         public static final double MIN_MOTOR_INPUT = 0.3;
     }
 }
