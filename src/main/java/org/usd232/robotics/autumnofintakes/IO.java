@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import static org.usd232.robotics.autumnofintakes.Constants.*;
 
 /** Class that "hides" the button bindings */
-public class IO {
+public final class IO {
     /**
      * The logger.
      *
@@ -34,6 +34,7 @@ public class IO {
     public static final JoystickButton ManipulatorXbox_LStick = LOG.catchAll(() -> new JoystickButton(xboxController, 9));
     public static final JoystickButton ManipulatorXbox_RStick = LOG.catchAll(() -> new JoystickButton(xboxController, 10));
 
+    // Joystick Buttons
     public static final JoystickButton LeftJoystick_Trigger = LOG.catchAll(() -> new JoystickButton(leftJoystick, 1));
     public static final JoystickButton LeftJoystick_Button2 = LOG.catchAll(() -> new JoystickButton(leftJoystick, 2));
     public static final JoystickButton LeftJoystick_Button3 = LOG.catchAll(() -> new JoystickButton(leftJoystick, 3));
@@ -46,6 +47,7 @@ public class IO {
     public static final JoystickButton LeftJoystick_Button10 = LOG.catchAll(() -> new JoystickButton(leftJoystick, 10));
     public static final JoystickButton LeftJoystick_Button11 = LOG.catchAll(() -> new JoystickButton(leftJoystick, 11));
 
+    // Joystick Buttons
     public static final JoystickButton RightJoystick_Trigger = LOG.catchAll(() -> new JoystickButton(rightJoystick, 1));
     public static final JoystickButton RightJoystick_Button2 = LOG.catchAll(() -> new JoystickButton(rightJoystick, 2));
     public static final JoystickButton RightJoystick_Button3 = LOG.catchAll(() -> new JoystickButton(rightJoystick, 3));
@@ -57,4 +59,6 @@ public class IO {
     public static final JoystickButton RightJoystick_Button9 = LOG.catchAll(() -> new JoystickButton(rightJoystick, 9));
     public static final JoystickButton RightJoystick_Button10 = LOG.catchAll(() -> new JoystickButton(rightJoystick, 10));
     public static final JoystickButton RightJoystick_Button11 = LOG.catchAll(() -> new JoystickButton(rightJoystick, 11));
+
+    private IO() {/* what does sleep feel like */}
 }
