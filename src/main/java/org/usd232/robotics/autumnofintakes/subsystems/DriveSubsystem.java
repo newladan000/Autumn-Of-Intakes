@@ -3,7 +3,7 @@ package org.usd232.robotics.autumnofintakes.subsystems;
 import org.usd232.robotics.autumnofintakes.log.Logger;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj.motorcontrol.PWMMotorController;
+import edu.wpi.first.wpilibj.motorcontrol.MotorController;
 import edu.wpi.first.wpilibj.motorcontrol.Talon;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -17,21 +17,21 @@ public class DriveSubsystem extends SubsystemBase {
      * 
      * @since 2018
      */
-    @SuppressWarnings("unused")
+    // @SuppressWarnings("unused")
     private static final Logger LOG = new Logger();
 
-    private final Talon leftMotor;
-    private final Talon rightMotor;
+    private final MotorController leftMotor;
+    private final MotorController rightMotor;
     private final DifferentialDrive differentialDrive;
 
     public DriveSubsystem() {
-        leftMotor = new Talon(DriveConstants.LEFT_MOTOR);
-        rightMotor = new Talon(DriveConstants.RIGHT_MOTOR);
+        leftMotor = LOG.catchAll(() -> new Talon(DriveConstants.LEFT_MOTOR));
+        rightMotor = LOG.catchAll(() -> new Talon(DriveConstants.RIGHT_MOTOR));
+
         this.differentialDrive = new DifferentialDrive(leftMotor, rightMotor);
     }
 
     public void drive(double left, double right){
         differentialDrive.tankDrive(left, right);
     }
-    
 }
