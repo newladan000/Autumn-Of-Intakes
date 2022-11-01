@@ -6,6 +6,7 @@ import org.usd232.robotics.autumnofintakes.subsystems.DriveSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 
 import static org.usd232.robotics.autumnofintakes.Constants.*;
+import static org.usd232.robotics.autumnofintakes.IO.*;
 
 // https://drive.google.com/file/d/1EBKde_UrpQlax-PRKJ1Qa8nDJuIpd07K/view?usp=sharing
 
@@ -24,8 +25,8 @@ public class RobotContainer {
     public RobotContainer() {
 
         driveSubsystem.setDefaultCommand(new TankDrive(
-            scaleInput(IO.leftJoystick.getY()),
-            scaleInput(IO.rightJoystick.getY()),
+            scaleInput(leftJoystick.getY()),
+            scaleInput(rightJoystick.getY()),
             driveSubsystem));
 
         // Configure the button bindings
