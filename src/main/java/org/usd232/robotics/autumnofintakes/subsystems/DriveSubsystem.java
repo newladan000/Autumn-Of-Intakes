@@ -23,14 +23,28 @@ public class DriveSubsystem extends SubsystemBase {
     private final Talon rightMotor;
     private final DifferentialDrive differentialDrive;
 
+    private double left;
+    private double right;
+
     public DriveSubsystem() {
         leftMotor = LOG.catchAll(() -> new Talon(DriveConstants.LEFT_MOTOR));
         rightMotor = LOG.catchAll(() -> new Talon(DriveConstants.RIGHT_MOTOR));
+
+        leftMotor.setInverted(DriveConstants.LEFT_MOTOR_INVERTED);
+        rightMotor.setInverted(DriveConstants.RIGHT_MOTOR_INVERTED);
 
         this.differentialDrive = new DifferentialDrive(leftMotor, rightMotor);
     }
 
     public void drive(double left, double right){
+        this.left = left;
+        this.right = right;
+    }
+
+    @Override
+    public void periodic() {
+        // LOG.info("Left in: %f; Right in: %f", left, right);
         differentialDrive.tankDrive(left, right);
     }
+
 }
