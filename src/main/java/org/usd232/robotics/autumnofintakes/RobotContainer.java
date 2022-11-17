@@ -1,10 +1,9 @@
 package org.usd232.robotics.autumnofintakes;
 
-import edu.wpi.first.wpilibj.Joystick;
-import org.usd232.robotics.autumnofintakes.commands.ExampleCommand;
 import org.usd232.robotics.autumnofintakes.log.Logger;
 import org.usd232.robotics.autumnofintakes.subsystems.DriveSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
+
 import static org.usd232.robotics.autumnofintakes.Constants.*;
 
 // https://drive.google.com/file/d/1EBKde_UrpQlax-PRKJ1Qa8nDJuIpd07K/view?usp=sharing
@@ -12,23 +11,17 @@ import static org.usd232.robotics.autumnofintakes.Constants.*;
 public class RobotContainer {
     /**
      * The logger.
-     * 
+     *
      * @since 2018
      */
-    //@SuppressWarnings("unused")
+    @SuppressWarnings("unused")
     private static final Logger LOG = new Logger();
-    
-    private final DriveSubsystem m_driveSubsystem = new DriveSubsystem();
 
-    private final ExampleCommand m_autoCommand = new ExampleCommand(m_driveSubsystem);
+    public final DriveSubsystem driveSubsystem = new DriveSubsystem();
 
-    @SuppressWarnings("unused")
-    private final Joystick movementJoystick = LOG.catchAll(() -> new Joystick(OIConstants.LEFT_JOYSTICK));
-    @SuppressWarnings("unused")
-    private final Joystick rotationJoystick = LOG.catchAll(() -> new Joystick(OIConstants.RIGHT_JOYSTICK));
-
-  /** The container for the robot. Contains subsystems, OI devices, and commands. */
+    /** The container for the robot. Contains subsystems, OI devices, and commands. */
     public RobotContainer() {
+
         // Configure the button bindings
         configureButtonBindings();
     }
@@ -42,6 +35,30 @@ public class RobotContainer {
      */
     public Command getAutonomousCommand() {
         // An ExampleCommand will run in autonomous
-        return m_autoCommand;
+        return null;
+    }
+
+    /** Sets the deadzone for the controller/joystick */
+    private static double deadband(double value, double deadband) {
+        if (Math.abs(value) > deadband) {
+            if (value > 0.0) {
+                return (value - deadband) / (1.0 - deadband);
+            } else {
+                return (value + deadband) / (1.0 - deadband);
+            }
+        } else {
+            return 0.0;
+        }
+    }
+
+    /** Applies deadband and Copies the sign */
+    public static double modifyAxis(double value) {
+        // Deadband
+        value = deadband(value, OIConstants.DEADBAND);
+
+        // Square the axis
+        value = Math.copySign(value * value, value);
+
+        return value;
     }
 }

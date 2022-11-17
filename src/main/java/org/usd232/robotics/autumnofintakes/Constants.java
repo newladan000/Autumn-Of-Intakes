@@ -16,5 +16,22 @@ public final class Constants {
     public static final class OIConstants {
         public static final int LEFT_JOYSTICK = 0;
         public static final int RIGHT_JOYSTICK = 1;
+        public static final int MANIPULATOR_CONTROLLER = 2;
+
+        public static final double DEADBAND = 0.3;
+    }
+
+    public static final class DriveConstants {
+        //Drive motor ports
+        public static final int RIGHT_MOTOR = 0;
+        public static final int LEFT_MOTOR = 1;
+
+        public static final boolean LEFT_MOTOR_INVERTED = true;
+        public static final boolean RIGHT_MOTOR_INVERTED = false;
+
+        /** Minimum power the motors need to move */
+        // TODO: test input range
+        // value from bones not blockHead
+        public static final double MIN_MOTOR_INPUT = 0.0;
     }
 }
