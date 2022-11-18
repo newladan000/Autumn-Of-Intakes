@@ -5,9 +5,7 @@ plugins {
     id "edu.wpi.first.GradleRIO" version "2022.4.1"
 }
 
-repositories {
-  maven { url 'https://jitpack.io' }
-}
+
 
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
@@ -19,7 +17,7 @@ def ROBOT_MAIN_CLASS = "org.usd232.robotics.autumnofintakes.Main"
 deploy {
     targets {
         roborio(getTargetTypeClass('RoboRIO')) {
-            // Team number is loaded either from the .wpilib/wpilib_preferences.json
+            // Team number is loaded aeither from the .wpilib/wpilib_preferences.json
             // or from command line. If not found an exception will be thrown.
             // You can use getTeamOrDefault(team) instead of getTeamNumber if you
             // want to store a team number in this file.
@@ -72,7 +70,6 @@ dependencies {
     simulationRelease wpi.sim.enableRelease()
 
     testImplementation 'junit:junit:4.12'
-    implementation "com.github.Oblarg:Oblog:4.0.9"
 }
 
 // Simulation configuration (e.g. environment variables).
